@@ -1,0 +1,8 @@
+{
+    "title": "De-zero",
+    "id": "deZero",
+    "description": "Remove leading zeroes from track and disc numbers",
+    "version": "0.0.1",
+    "type": "metadata",
+    "author": "Samuel Bruce"
+}
