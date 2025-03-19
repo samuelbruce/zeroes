@@ -13,12 +13,16 @@ actions.deZero = {
       let fieldDef = uitools.tracklistFieldDefs[fieldID];
       
       await listAsyncForEach(tracklist, async (track, next) => {
-        //fieldVals.push(fieldDef.getValue(track));
+        let oldVal = fieldDef.getValue(track);
+        let newVal = oldVal.replace(/^0+/, '');
+        fieldDef.setValue(track, newVal, true);
         next();
       }, () => {
+        /*
         uitools.toastMessage.show('test', {
           disableUndo: true
         });
+        */
       });
     }
   
