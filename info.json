@@ -2,8 +2,8 @@
     "title": "Zeroes",
     "id": "zeroes",
     "description": "Remove (or add) leading zeroes from (or to) numerical fields",
-    "version": "1.0",
+    "version": "1.0.0",
     "author": "Samuel Bruce",
     "type": "metadata",
-    "icon": "zeroes.svg"
+    "icon": "zeroes.png"
 }
