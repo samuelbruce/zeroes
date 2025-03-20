@@ -2,6 +2,7 @@
 actions.zeroes = {
   title: 'Zeroes',
   order: 200,
+  icon: 'zeroes',
   submenu: function (params) {
     return new Promise(function (resolve, reject) {
       let ar = [actions.deZero, actions.reZero];
@@ -18,6 +19,7 @@ window._menuItems.editTags.action.submenu.push({
 
 actions.deZero = {
   title: 'De-zero',
+  icon: 'deZero',
   execute: async function () {
     const supportedFields = ['order']; //, 'discNo', 'episode', 'season'];
     var message = '';
@@ -43,6 +45,7 @@ actions.deZero = {
 
 actions.reZero = {
   title: 'Re-zero',
+  icon: 'reZero',
   execute: async function () {
     const supportedFields = ['order']; //, 'discNo', 'episode', 'season'];
     var message = '';
