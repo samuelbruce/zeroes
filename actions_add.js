@@ -1,4 +1,21 @@
 
+actions.zeroes = {
+  title: 'Zeroes',
+  order: 200,
+  submenu: function (params) {
+    return new Promise(function (resolve, reject) {
+      let ar = [actions.deZero, actions.reZero];
+      resolve(ar);
+    });
+  }
+}
+
+window._menuItems.editTags.action.submenu.push({
+  action: actions.zeroes,
+  order: 200,
+  grouporder: 10
+});
+
 actions.deZero = {
   title: 'De-zero',
   execute: async function () {
@@ -18,11 +35,6 @@ actions.deZero = {
         fieldDef.setValue(track, newVal, true);
         next();
       }, () => {
-        /*
-        uitools.toastMessage.show('test', {
-          disableUndo: true
-        });
-        */
       });
     }
   
@@ -81,15 +93,3 @@ actions.reZero = {
   
   }
 }
-
-window._menuItems.editTags.action.submenu.push({
-    action: actions.deZero,
-    order: 200,
-    grouporder: 10
-});
-
-window._menuItems.editTags.action.submenu.push({
-    action: actions.reZero,
-    order: 201,
-    grouporder: 10
-});
