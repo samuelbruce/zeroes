@@ -21,8 +21,7 @@ actions.deZero = {
   title: 'De-zero',
   icon: 'deZero',
   execute: async function () {
-    const supportedFields = ['order']; //, 'discNo', 'episode', 'season'];
-    var message = '';
+    const supportedFields = ['order', 'discNo', 'episode', 'season'];
     
     let tracklist = uitools.getSelectedTracklist();
     await tracklist.whenLoaded();
@@ -47,8 +46,7 @@ actions.reZero = {
   title: 'Re-zero',
   icon: 'reZero',
   execute: async function () {
-    const supportedFields = ['order']; //, 'discNo', 'episode', 'season'];
-    var message = '';
+    const supportedFields = ['order', 'discNo', 'episode', 'season'];
     
     function isNum(str) {
       if (typeof str != 'string') return false
