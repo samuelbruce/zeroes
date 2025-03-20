@@ -10,8 +10,6 @@ The addon can make changes to the Trackadds a 'Zeroes' submenu under 'Edit tags'
   This action removes all leading zeroes (if any are present) from all supported tags of all selected tracks.
 ### Re-zero
   This action pads values with leading zeroes up to the maximum number of digits found in each supported tag of all selected tracks.
-### Custom
-  This action allows the user to configure how many zeroes they desire, and which fields will be edited.
 
 ## What tags?
 - Track Number
