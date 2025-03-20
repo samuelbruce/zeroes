@@ -5,7 +5,7 @@ actions.zeroes = {
   icon: 'zeroes',
   submenu: function (params) {
     return new Promise(function (resolve, reject) {
-      let ar = [actions.deZero, actions.reZero];
+      let ar = [actions.deZero, actions.reZero, actions.anyZero];
       resolve(ar);
     });
   }
@@ -92,5 +92,53 @@ actions.reZero = {
       });
     }
   
+  }
+}
+
+actions.anyZero = {
+  title: 'Custom Zero',
+  icon: 'anyZero',
+  execute: async function () {
+  var list = uitools.getSelectedTracklist();
+  var dlg = uitools.openDialog('dlgAnyZero', {
+      show: true,
+      modal: true,
+      title: _('Custom Zero'),
+      tracks: list
+  });
+  dlg.closed = async function () {
+      app.unlisten(dlg, 'closed', dlg.closed);
+      if (dlg.modalResult !== 1)
+          return;
+      var holds = dlg.getValue('getHolds')();
+      var itmRec;
+      var items = {};
+      var prevStr;
+
+      function rdQS(UnquotedString) {
+          return "'" + UnquotedString.replace(/'/g, "''") + "'";
+      };
+
+      for (let i in holds) {
+        let itmRec = holds[i];
+        let id = itmRec.id;
+        let str = itmRec.str;
+        let tag = itmRec.tag;
+        if (!items[id]) {
+            items[id] = itmRec.item
+        }
+
+        prevStr = itmRec.item[tag];
+        itmRec.item[tag] = str;
+      }
+
+      var list = app.utils.createTracklist(true);
+      for (var id in items) {
+        list.add(items[id]);
+      }
+
+      list.commitAsync();
+    };
+    app.listen(dlg, 'closed', dlg.closed);
   }
 }
