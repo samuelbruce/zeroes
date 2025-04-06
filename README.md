@@ -5,7 +5,7 @@ A MediaMonkey addon for removing (or even adding) leading zeroes from (or to) nu
 Sometimes I find myself adding tracks or albums to my MediaMonkey library from sources that add leading zeroes to the track number by default. And I don't like this! Removing them manually was a drag so eventually I got around to making this addon. Perhaps someone else will find it useful!
 
 ## How do?
-The addon can make changes to the Trackadds a 'Zeroes' submenu under 'Edit tags' in MediaMonkey's contextual menu (the one which appears when right-clicking on a track), with the following actions:
+This addon adds a 'Zeroes' submenu under 'Edit tags' in MediaMonkey's contextual menu (the one which appears when right-clicking on a track), with the following actions:
 ### De-zero
   This action removes all leading zeroes (if any are present) from all supported tags of all selected tracks.
 ### Re-zero
